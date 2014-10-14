@@ -16,7 +16,7 @@ angular.module('topDestinations.places', ['ngGPlaces', 'google-maps'.ns()])
   var onePlace = {id:0, name:"Hack Reactor",coords:{latitude:37.783542,longitude:-122.40894300000002}} ;
   $scope.places = [onePlace];
   $scope.place = onePlace;  
-  console.log($scope.place);
+  // console.log($scope.place);
   $scope.map = {
     center: {
         latitude: 37.7806521,
@@ -29,6 +29,16 @@ angular.module('topDestinations.places', ['ngGPlaces', 'google-maps'.ns()])
   }
   $scope.updateMap = function(val, bool){
   	$scope.places = [val]; 
+  	$scope.map = {
+	    center: {
+	        latitude: val.coords.latitude,
+	        longitude: val.coords.longitude
+	    },
+	    zoom: 15,
+	    options: {
+	    	draggable: true
+	    }
+	  }
   	console.log($scope.places); 
   }; 
   $scope.$on('new place', function(place){
@@ -53,12 +63,11 @@ angular.module('topDestinations.places', ['ngGPlaces', 'google-maps'.ns()])
 					latitude: scope.place.geometry.location.k,
 					longitude: scope.place.geometry.location.B
 				}
+
 				scope.place.id = 0; 
 				scope.$apply(function() {
 					scope.updateMap(scope.place, true)
 					model.$setViewValue(element.val()); 
-					console.log(JSON.stringify({name: scope.place.name, coords:scope.place.coords}));
-					console.log(scope.gPlace.gm_accessors_.place.rd.place);
 				});
 			});
 		}

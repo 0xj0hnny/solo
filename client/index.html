@@ -10,7 +10,7 @@
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
     <script src="bower_components/lodash/dist/lodash.js"></script>
     <!-- // <script src="bower_components/bluebird/src/bluebird.js"></script> -->
-    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
     <script src="lib/angularjs-google-places/dist/angularjs-google-places.min.js"></script>
 
@@ -20,7 +20,6 @@
   </head>
 
   <body ng-controller="PlacesController">
-	
   	<div class="container">
       <form ng-submit="updateMap(mapfilter)"> 
         <input class='form-control' 
@@ -31,21 +30,17 @@
                ng-mode="filter" 
                googleplace/>
       </form>
-<!--       <form ng-submit="updateMap(mapfilter)">
-			<input class="form-control text-center" 
-             id="searchfild" 
-             background-color="transparent" 
-             color="transparent" 
-             ng-mode="filter" 
-             placeholder="Enter a location" 
-             ng-model="mapfilter">
-      </form> -->
 		</div>
-			<ui-gmap-google-map center="map.center" zoom="map.zoom">
-        <ui-gmap-marker ng-repeat='(index, marker) in places' coords="marker.coords" idkey="place.id">
-        </ui-gmap-marker>
-      </ui-gmap-google-map>
-	
+		<ui-gmap-google-map center="map.center" zoom="map.zoom">
+      <ui-gmap-marker ng-repeat='(index, marker) in places' coords="marker.coords" idkey="place.id">
+      </ui-gmap-marker>
+      <ui-gmap-window show="marker.show" ng-cloak>
+        <p>
+            Latitude: {{markers.coords.latitude}}<br/>
+            Longitude: {{markers.coords.longitude}}<br/>
+        </p>
+      </ui-gmap-window>
+    </ui-gmap-google-map>
   </body>
 </html>
 
