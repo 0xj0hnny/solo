@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="topDestinations">
+  <head>
+  	<meta charset="UTF-8">
+		<title>Top Destinations</title>
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+    <script src="bower_components/lodash/dist/lodash.js"></script>
+    <!-- // <script src="bower_components/bluebird/src/bluebird.js"></script> -->
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+    <script src="lib/angularjs-google-places/dist/angularjs-google-places.min.js"></script>
+
+    
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="places.js"></script>
+  </head>
+
+  <body ng-controller="PlacesController">
+	
+  	<div class="container">
+      <input class='form-control' ng-model="chosenPlace" googleplace/>
+      <form ng-submit="updateMap(mapfilter)">
+			<input class="form-control text-center" 
+             id="searchfild" 
+             background-color="transparent" 
+             color="transparent" 
+             ng-mode="filter" 
+             placeholder="Search Places" 
+             ng-model="mapfilter">
+      </form>
+		</div>
+			<ui-gmap-google-map center="map.center" zoom="map.zoom">
+        <ui-gmap-marker ng-repeat='(index, marker) in places' coords="marker.coords" idkey="index">
+        <!-- <ui-gmap-marker coords="place.coords" idkey="1"> -->
+        </ui-gmap-marker>
+      </ui-gmap-google-map>
+	
+  </body>
+</html>
+

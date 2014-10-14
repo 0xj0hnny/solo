@@ -1,0 +1,22 @@
+{
+  "name": "2014-09-solo",
+  "version": "1.0.0",
+  "description": "hotDestinations > Open up this file in an editor to see the comment block",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/johnnyliang213/2014-09-solo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johnnyliang213/2014-09-solo/issues"
+  },
+  "homepage": "https://github.com/johnnyliang213/2014-09-solo",
+  "dependencies": {
+    "express": "^4.9.7"
+  }
+}
