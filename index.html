@@ -1,16 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" ng-app="topDestinations">
   <head>
-    <style type="text/css">
-      html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
-    </style>
+  	<meta charset="UTF-8">
+		<title>Top Destinations</title>
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <script type="text/javascript"
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAVyhAMqke0rcfUTrIme4aL6DnE2P6KiRc">
     </script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
   </head>
   <body>
-	<div id="map-canvas"></div>
-	<div ng-serach="country"></div>
+  	<div class="container">
+			<input class="form-control text-center" id="searchfild" background-color="transparent" color="transparent" ng-mode="filter" placeholder="Search Places">
+		</div>
+			<div id="map-canvas"></div>
+	
   </body>
 </html>
+

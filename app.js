@@ -1,11 +1,11 @@
 function initialize() {
-  var hrLat = 39.4438478;  var hrLong = -94.9744697;
-  var myLatLng = new google.maps.LatLng(hrLat, hrLong);
+  var defaultLat = 39.4438478;  
+  var defaultLong = -94.9744697;
+  var myLatLng = new google.maps.LatLng(defaultLat, defaultLong);
   var mapOptions = {
     zoom: 5,
     center: myLatLng
   };
-
 
   var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
   

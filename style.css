@@ -1,0 +1,15 @@
+html, body, #map-canvas {
+  height: 100%;
+  margin: 0px;
+  padding: 0px
+}
+
+body, .container, #searchfild {
+	position: relative;
+	z-index: 1;
+}
+
+#searchfild {
+	position: absolute;
+	top: 50px;
+}
