@@ -22,20 +22,27 @@
   <body ng-controller="PlacesController">
 	
   	<div class="container">
-      <input class='form-control' ng-model="chosenPlace" googleplace/>
-      <form ng-submit="updateMap(mapfilter)">
+      <form ng-submit="updateMap(mapfilter)"> 
+        <input class='form-control' 
+               id="searchfild"
+               ng-model="chosenPlace"
+               background-color="transparent"
+               color="transparent" 
+               ng-mode="filter" 
+               googleplace/>
+      </form>
+<!--       <form ng-submit="updateMap(mapfilter)">
 			<input class="form-control text-center" 
              id="searchfild" 
              background-color="transparent" 
              color="transparent" 
              ng-mode="filter" 
-             placeholder="Search Places" 
+             placeholder="Enter a location" 
              ng-model="mapfilter">
-      </form>
+      </form> -->
 		</div>
 			<ui-gmap-google-map center="map.center" zoom="map.zoom">
-        <ui-gmap-marker ng-repeat='(index, marker) in places' coords="marker.coords" idkey="index">
-        <!-- <ui-gmap-marker coords="place.coords" idkey="1"> -->
+        <ui-gmap-marker ng-repeat='(index, marker) in places' coords="marker.coords" idkey="place.id">
         </ui-gmap-marker>
       </ui-gmap-google-map>
 	
