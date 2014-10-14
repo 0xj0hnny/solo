@@ -13,20 +13,22 @@ angular.module('topDestinations.places', ['ngGPlaces', 'google-maps'.ns()])
 
 
 .controller("PlacesController", function($scope, placeAPI){
-  var onePlace = {id:0, name:"Hack Reactor",coords:{latitude:37.783542,longitude:-122.40894300000002}} ;
+  var onePlace = {id:0, name:"USA",coords:{latitude:40.1548991,longitude:-98.7864669}} ;
   $scope.places = [onePlace];
   $scope.place = onePlace;  
   // console.log($scope.place);
   $scope.map = {
     center: {
-        latitude: 37.7806521,
-        longitude: -122.4061711
+        latitude: 40.1548991,
+        longitude: -98.7864669
     },
-    zoom: 15,
+    zoom: 5,
     options: {
     	draggable: true
     }
   }
+
+  
   $scope.updateMap = function(val, bool){
   	$scope.places = [val]; 
   	$scope.map = {
